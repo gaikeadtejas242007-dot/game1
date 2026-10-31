@@ -1,0 +1,165 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#79c8ff, #eafcff 40%, #d8f5d0 100%);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container {
+    padding: 24px 20px 28px;
+    background: rgba(255, 255, 255, 0.28);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(6px);
+}
+
+h1 {
+    color: #1f2d3d;
+    margin-bottom: 15px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.65);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 12px auto;
+    max-width: 900px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f2d3d;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 12px;
+    padding: 12px 18px;
+}
+
+.garage {
+    max-width: 900px;
+    margin: 18px auto 12px;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 16px 18px;
+}
+
+.garage h2 {
+    color: #1d3a4f;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.car-options {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(110px, 1fr));
+    gap: 12px;
+}
+
+.car-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+    border-radius: 12px;
+    border: 2px solid rgba(27, 49, 65, 0.15);
+    background: rgba(255, 255, 255, 0.45);
+    color: #1d2d3b;
+    font-weight: bold;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.car-option.active {
+    border-color: #ff8d1a;
+    background: rgba(255, 255, 255, 0.75);
+    transform: translateY(-2px);
+}
+
+.preview {
+    width: 90px;
+    height: 32px;
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    background: linear-gradient(#dfefff, #a7c8ff);
+}
+
+.preview::before,
+.preview::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #212121;
+    border-radius: 50%;
+    top: 18px;
+}
+
+.preview::before { left: 12px; }
+.preview::after { right: 12px; }
+
+.preview-classic { background: linear-gradient(#f44336, #b71c1c); }
+.preview-sport { background: linear-gradient(#00c2ff, #0077ff); }
+.preview-jeep { background: linear-gradient(#4caf50, #1f7a2e); }
+.preview-racer { background: linear-gradient(#ffb300, #ff7a00); }
+.preview-bus { background: linear-gradient(#5ec6ff, #1b75d0); }
+
+canvas {
+    width: 100%;
+    max-width: 900px;
+    background: linear-gradient(#87ceeb 0%, #b8e6ff 55%, #d7f3d0 100%);
+    border: 4px solid #2f3b32;
+    border-radius: 16px;
+    box-shadow: inset 0 0 18px rgba(255,255,255,0.5);
+}
+
+.controls {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(#ff9f1c, #ff7a00);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 122, 0, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#boost {
+    background: linear-gradient(#1e90ff, #0b63d6);
+    box-shadow: 0 6px 18px rgba(11, 99, 214, 0.35);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(255, 122, 0, 0.5);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#restart {
+    background: linear-gradient(#35b869, #218838);
+    box-shadow: 0 6px 18px rgba(33, 136, 56, 0.35);
+}
+

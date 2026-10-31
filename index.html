@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hill Climb Racing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🏎️ Hill Climb Racing</h1>
+
+        <div class="stats">
+            <span>Distance: <b id="distance">0</b> m</span>
+            <span>Coins: <b id="coins">0</b></span>
+            <span>Energy: <b id="energy">100</b>%</span>
+        </div>
+
+        <div class="garage" aria-label="Car selection">
+            <h2>Choose Your Car</h2>
+            <div class="car-options">
+                <button class="car-option active" data-car="classic" type="button">
+                    <span class="preview preview-classic"></span>
+                    <span>Classic</span>
+                </button>
+                <button class="car-option" data-car="sport" type="button">
+                    <span class="preview preview-sport"></span>
+                    <span>Sport</span>
+                </button>
+                <button class="car-option" data-car="jeep" type="button">
+                    <span class="preview preview-jeep"></span>
+                    <span>Jeep</span>
+                </button>
+                <button class="car-option" data-car="racer" type="button">
+                    <span class="preview preview-racer"></span>
+                    <span>Racer</span>
+                </button>
+                <button class="car-option" data-car="bus" type="button">
+                    <span class="preview preview-bus"></span>
+                    <span>Bus</span>
+                </button>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="900" height="450"></canvas>
+
+        <div class="controls">
+            <button id="brake">◀ BRAKE</button>
+            <button id="gas">GAS ▶</button>
+            <button id="boost">⚡ BOOST</button>
+        </div>
+
+        <button id="restart">Restart Game</button>
+        <p>Use Arrow Keys: ← Brake | → Accelerate</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
